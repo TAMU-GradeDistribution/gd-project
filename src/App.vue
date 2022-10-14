@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const scrollbar = ref(null)
 onMounted(() => {
-  useRouter().afterEach((to, from, failure) => {
+  useRouter().afterEach(() => {
     // @ts-expect-error ref should be valid after onMounted
     scrollbar.value.$el.scrollTop = 0
     // @ts-expect-error ref should be valid after onMounted
