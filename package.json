@@ -1,29 +1,76 @@
 {
-  "name": "tamugd-website",
-  "version": "1.3.0",
-  "description": "The goal of this project is to create a website which is capable of creating visualizations for the grade distribution reports published by Texas A&M University's Registrar's office.",
-  "main": "server.js",
-  "dependencies": {
-    "compression": "^1.7.4",
-    "express": "^4.18.1",
-    "helmet": "^6.0.0",
-    "mysql2": "^2.3.3",
-    "winston": "^3.8.2",
-    "winston-daily-rotate-file": "^4.7.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TAMU-GradeDistribution/tamugd-website.git"
-  },
+  "name": "gd-website",
+  "type": "module",
+  "version": "2.0.0",
+  "private": "true",
+  "packageManager": "pnpm@7.8.0",
   "author": "adibarra <93070681+adibarra@users.noreply.github.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/TAMU-GradeDistribution/tamugd-website/issues"
+  "homepage": "https://github.com/GDProject/gd-website#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GDProject/gd-website.git"
   },
-  "homepage": "https://github.com/TAMU-GradeDistribution/tamugd-website#readme",
-  "packageManager": "yarn@3.2.3"
+  "bugs": {
+    "url": "https://github.com/GDProject/gd-website/issues"
+  },
+  "scripts": {
+    "build": "vite-ssg build",
+    "dev": "vite --port 3333 --open",
+    "lint": "eslint .",
+    "preview": "vite preview",
+    "preview-https": "serve dist",
+    "serve": "echo 'Not implemented yet'",
+    "typecheck": "vue-tsc --noEmit",
+    "up": "taze major -I"
+  },
+  "dependencies": {
+    "@unocss/reset": "^0.45.29",
+    "@vueuse/core": "^9.3.0",
+    "@vueuse/head": "^0.9.8",
+    "floating-vue": "2.0.0-beta.20",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.0.23",
+    "vue": "^3.2.40",
+    "vue-demi": "^0.13.11",
+    "vue-i18n": "^9.2.2",
+    "vue-router": "^4.1.5",
+    "vue-select": "4.0.0-beta.5",
+    "vue3-perfect-scrollbar": "^1.6.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.27.0",
+    "@iconify-json/carbon": "^1.1.8",
+    "@intlify/vite-plugin-vue-i18n": "^6.0.3",
+    "@types/markdown-it-link-attributes": "^3.0.1",
+    "@types/node": "^18.8.5",
+    "@types/nprogress": "^0.2.0",
+    "@types/vue-select": "^3.16.2",
+    "@vitejs/plugin-vue": "^3.1.2",
+    "@vue/test-utils": "^2.1.0",
+    "critters": "^0.0.16",
+    "cross-env": "^7.0.3",
+    "deepmerge": "^4.2.2",
+    "eslint": "^8.25.0",
+    "https-localhost": "^4.7.1",
+    "markdown-it-link-attributes": "^4.0.1",
+    "markdown-it-shiki": "^0.5.1",
+    "pnpm": "^7.13.4",
+    "sass": "1.55.0",
+    "shiki": "^0.11.1",
+    "taze": "^0.8.2",
+    "typescript": "^4.8.4",
+    "unocss": "^0.45.29",
+    "unplugin-auto-import": "^0.11.2",
+    "unplugin-vue-components": "^0.22.8",
+    "vite": "^3.1.8",
+    "vite-plugin-inspect": "^0.7.5",
+    "vite-plugin-pages": "^0.26.0",
+    "vite-plugin-vue-component-preview": "^0.3.3",
+    "vite-plugin-vue-layouts": "^0.7.0",
+    "vite-plugin-vue-markdown": "^0.22.1",
+    "vite-ssg": "^0.21.1",
+    "vite-ssg-sitemap": "^0.4.3",
+    "vue-tsc": "^1.0.7"
+  }
 }

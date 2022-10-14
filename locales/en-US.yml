@@ -1,0 +1,36 @@
+# text used in the header component
+header:
+  logo: Logo
+  toggle_dark: Toggle dark mode
+  toggle_settings: Toggle settings
+  language: Language
+  select_lang: Select your language
+  settings: Settings
+
+# text used in the footer component
+footer:
+  copyright: Copyright
+  email: Email
+  github: GitHub
+  licensed: MIT Licensed
+
+# text used on the main page
+main:
+  not_sure: Not sure whats going on here?
+  select_university: Select your university
+  what_university: Which university do you go to?
+
+# text used in links
+link:
+  about: About
+  go_back: Go Back
+
+# text used in buttons
+button:
+  back: Back
+  go: GO
+  search: Search
+
+# text used in error messages
+error:
+  not-found: Not Found

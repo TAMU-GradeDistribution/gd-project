@@ -1,0 +1,43 @@
+{
+  "cSpell.words": [
+    "adibarra",
+    "Attributify",
+    "Composables",
+    "demi",
+    "dicom",
+    "forceupdate",
+    "gdproject",
+    "iconify",
+    "intlify",
+    "nprogress",
+    "pinia",
+    "pnpm",
+    "Roadmap",
+    "Shiki",
+    "subflow",
+    "taze",
+    "typecheck",
+    "unocss",
+    "unplugin",
+    "Vite",
+    "vitejs",
+    "vitesse",
+    "vuetify",
+    "vueuse"
+  ],
+  "i18n-ally.displayLanguage": "en-US",
+  "i18n-ally.sourceLanguage": "en-US",
+  "i18n-ally.keystyle": "nested",
+  "i18n-ally.localesPaths": [
+    "locales"
+  ],
+  "i18n-ally.sortKeys": true,
+  "prettier.enable": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "files.associations": {
+    "*.css": "postcss"
+  },
+  "editor.formatOnSave": false
+}
