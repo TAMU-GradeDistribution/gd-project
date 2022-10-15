@@ -29,28 +29,35 @@ const setUni = (selection: University) => {
 const search = () => {
   if (!currentUniversity.value.value || !searchString.value)
     return
-
-  console.log(`begin search for: ${currentUniversity.value.value} ${searchString.value}`)
+  router.push({ path: '/search', query: { u: currentUniversity.value.value, s: searchString.value } })
 }
 
-allUniversities.length = 0
+const fetchUniversities = async () => {
+  // const response = await fetch('/api/v1/universities')
+  // const data = await response.json()
+  // allUniversities.value = data.map((uni: any) => new University(uni.id, uni.name))
 
-allUniversities.push(new University('TAMU', 'Texas A&M University, College Station'))
-allUniversities.push(new University('TAMUT', 'Texas A&M University, Texarkana'))
-allUniversities.push(new University('TAMUCC', 'Texas A&M University, Corpus Christi'))
-allUniversities.push(new University('TAMUK', 'Texas A&M University, Kingsville'))
-allUniversities.push(new University('TAMUQ', 'Texas A&M University, Qatar'))
-allUniversities.push(new University('TAMUSA', 'Texas A&M University, San Antonio'))
-allUniversities.push(new University('TAMUC', 'Texas A&M University, Commerce'))
+  // TODO: remove and populate from API
+  allUniversities.length = 0
 
-allUniversities.push(new University('UT', 'University of Texas, Austin'))
-allUniversities.push(new University('UTA', 'University of Texas, Arlington'))
-allUniversities.push(new University('UTD', 'University of Texas, Dallas'))
-allUniversities.push(new University('UTEP', 'University of Texas, El Paso'))
-allUniversities.push(new University('UTSA', 'University of Texas, San Antonio'))
-allUniversities.push(new University('UTRGV', 'University of Texas, Rio Grande Valley'))
+  allUniversities.push(new University('TAMU', 'Texas A&M University, College Station'))
+  allUniversities.push(new University('TAMUT', 'Texas A&M University, Texarkana'))
+  allUniversities.push(new University('TAMUCC', 'Texas A&M University, Corpus Christi'))
+  allUniversities.push(new University('TAMUK', 'Texas A&M University, Kingsville'))
+  allUniversities.push(new University('TAMUQ', 'Texas A&M University, Qatar'))
+  allUniversities.push(new University('TAMUSA', 'Texas A&M University, San Antonio'))
+  allUniversities.push(new University('TAMUC', 'Texas A&M University, Commerce'))
 
-allUniversities.sort((a, b) => a.label.localeCompare(b.label))
+  allUniversities.push(new University('UT', 'University of Texas, Austin'))
+  allUniversities.push(new University('UTA', 'University of Texas, Arlington'))
+  allUniversities.push(new University('UTD', 'University of Texas, Dallas'))
+  allUniversities.push(new University('UTEP', 'University of Texas, El Paso'))
+  allUniversities.push(new University('UTSA', 'University of Texas, San Antonio'))
+  allUniversities.push(new University('UTRGV', 'University of Texas, Rio Grande Valley'))
+
+  allUniversities.sort((a, b) => a.label.localeCompare(b.label))
+}
+fetchUniversities()
 </script>
 
 <template>
