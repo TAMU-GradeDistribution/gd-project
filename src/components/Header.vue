@@ -8,7 +8,7 @@ const setLocale = (selection: string) => locale.value = selection
 
 <template>
   <header>
-    <div class="flex border-b-1 bg-light dark:bg-dark border-stone-700 px-5 mb-3">
+    <div class="flex border-b-1 bg-[var(--light-2)] dark:bg-[var(--dark-2)] border-stone-700 px-5 mb-3">
       <div alt="GDProject {{ t('header.logo') }}" class="text-2xl my-1 sm:text-4xl sm:my-2" i-carbon-subflow />
       <div class="text-2xl my-auto mx-5 font-900 sm:text-4xl">
         The GDProject
@@ -24,12 +24,12 @@ const setLocale = (selection: string) => locale.value = selection
 
     <!-- TODO: finish making the settings pane -->
     <div v-if="showSettings" class="flex absolute left-0 top-0 w-screen h-screen bg-opacity-50 bg-black items-center justify-center" @click="toggleSettings()">
-      <div class="relative justify-center w-66.66vw h-66.66vh rd-4 outline outline-dark dark:outline-light outline-1 bg-light dark:bg-dark" @click.stop="">
+      <div class="relative justify-center w-66.66vw h-66.66vh rd-4 outline outline-dark dark:outline-light outline-1 bg-[var(--light-2)] dark:bg-[var(--dark-2)]" @click.stop="">
         <button class="absolute icon-btn !outline-none text-2xl top-2 right-2" :title="t('header.toggle_settings')" @click="toggleSettings()">
           <div i-carbon-close />
         </button>
         <div class="text-3xl font-bold my-10">
-          {{ t('settings.settings') }}
+          {{ t('header.settings') }}
         </div>
         <div class="my-5">
           <!-- FIXME: need to lock scrolling while settings are open -->
@@ -38,7 +38,7 @@ const setLocale = (selection: string) => locale.value = selection
             v-model="locale"
             class="inline-block align-middle w-50"
             :items="availableLocales"
-            :label="t('settings.select_lang')"
+            :label="t('header.select_lang')"
             prepend-inner-icon="i-carbon-language"
             variant="outlined"
             @update:model-value="setLocale"

@@ -16,14 +16,16 @@ footer:
 
 # text used on the main page
 main:
-  not_sure: Not sure whats going on here?
   select_university: Select your university
   what_university: Which university do you go to?
+  not_sure: What is this?
+  missing_uni: Missing a university?
 
 # text used in links
 link:
   about: About
   go_back: Go Back
+  request_uni: Request a university
 
 # text used in buttons
 button:

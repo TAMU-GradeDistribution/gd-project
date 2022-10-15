@@ -5,7 +5,7 @@ const router = useRouter()
 
 <template>
   <div class="grow flex flex-col">
-    <div class="flex flex-col justify-center my-auto mx-auto p-5 bg-light dark:bg-dark rd-2 outline outline-1 outline-stone-700">
+    <div class="flex flex-col justify-center my-auto mx-auto p-5 bg-[var(--light-2)] dark:bg-[var(--dark-2)] rd-2 outline outline-1 outline-stone-700">
       <div class="flex flex-row inline-block font-900 text-4xl">
         <span class="text-red">404:&nbsp;</span>
         {{ t('error.not-found') }}

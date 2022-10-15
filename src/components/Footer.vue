@@ -4,7 +4,7 @@ const { t } = useI18n()
 
 <template>
   <footer>
-    <div class="border-t-1 bg-light dark:bg-dark border-stone-700 mt-3">
+    <div class="border-t-1 bg-[var(--light-2)] dark:bg-[var(--dark-2)] border-stone-700 mt-3">
       <div class="flex justify-center py-1 sm:py-2">
         <a class="icon-btn text-sm my-auto mx-2 md:text-lg" href="mailto:gdproject@adibarra.com" target="_blank" :title="t('footer.email')">
           <div i-carbon-email />

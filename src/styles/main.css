@@ -1,5 +1,17 @@
 @import './markdown.css';
 
+:root {
+  --dark-1: #121212;
+  --dark-2: #1e1e1e;
+  --dark-3: #a2a2a2;
+
+  --light-1: #f9f9f9;
+  --light-2: #eaeaea;
+  --light-3: #a2a2a2;
+
+  --c-accent: #3eb489;
+}
+
 html,
 body,
 #app {
@@ -9,7 +21,6 @@ body,
 }
 
 html.dark {
-  background: #121212;
   color-scheme: dark;
 }
 
@@ -18,7 +29,7 @@ html.dark {
 }
 
 #nprogress .bar {
-  background: #3eb489;
+  background: var(--c-accent);
   opacity: 0.75;
   position: fixed;
   z-index: 1031;
