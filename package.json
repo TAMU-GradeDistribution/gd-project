@@ -28,7 +28,6 @@
     "@unocss/reset": "^0.45.29",
     "@vueuse/core": "^9.3.0",
     "@vueuse/head": "^0.9.8",
-    "floating-vue": "2.0.0-beta.20",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.23",
     "vue": "^3.2.40",
@@ -36,7 +35,8 @@
     "vue-i18n": "^9.2.2",
     "vue-router": "^4.1.5",
     "vue-select": "4.0.0-beta.5",
-    "vue3-perfect-scrollbar": "^1.6.0"
+    "vue3-perfect-scrollbar": "^1.6.0",
+    "vue3-popper": "^1.5.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.27.0",
