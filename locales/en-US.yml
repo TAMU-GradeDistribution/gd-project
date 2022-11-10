@@ -8,10 +8,11 @@ header:
 
 # text used on the main page
 main:
+  how_to_search: How do I search?
+  missing_uni: Missing a university?
+  not_sure: What is this?
   select_university: Select your university
   what_university: Which university do you go to?
-  not_sure: What is this?
-  missing_uni: Missing a university?
 
 # text used in links
 link:
