@@ -4,11 +4,10 @@ const { t } = useI18n()
 
 <template>
   <header>
-    <div class="flex px-5 mb-3">
-      <div alt="{{ t('header.logo') }}" class="text-2xl my-2 sm:text-4xl" i-carbon-subflow />
-      <div class="text-xl font-900 my-auto mx-5 sm:text-3xl">
-        The GDProject
-      </div>
+    <div class="flex p-2 mb-3">
+      <RouterLink to="/" :title="t('link.home')">
+        <div alt="{{ t('header.logo') }}" class="text-2xl sm:text-4xl" i-carbon-subflow />
+      </RouterLink>
       <div class="grow" />
       <button class="icon-btn m-auto ml-3 sm:ml-5 sm:text-xl !hidden" :title="t('header.select_lang')">
         <div i-carbon-language />
