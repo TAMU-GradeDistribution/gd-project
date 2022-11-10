@@ -15,14 +15,12 @@ class University {
 }
 
 const showPopper = ref(0)
-const setShowPopper = (value: number) => {
-  showPopper.value = value
-}
-
 const searchString = ref('')
 const currentUniversity = ref<University>(new University('', ''))
 const allUniversities = $ref<Array<University>>(new Array<University>())
 
+const setShowPopper = (value: number) => showPopper.value = value
+const focusCourse = () => document.getElementById('course_select')!.querySelector('input')!.focus()
 const uniFilter = (option: any, label: string, search: string) => `${option.value} ${label}`.toLocaleLowerCase().includes(search.toLocaleLowerCase())
 const setCourse = (search: string) => searchString.value = search
 const setUni = (selection: University) => {
@@ -30,7 +28,6 @@ const setUni = (selection: University) => {
   if (selection === null)
     currentUniversity.value = new University('', '')
 }
-
 const search = () => {
   if (!currentUniversity.value.value || !searchString.value)
     return
@@ -75,13 +72,16 @@ fetchUniversities()
       <div class="mx-auto min-w-90 sm:min-w-120">
         <VSelect
           class="style-chooser mx-auto"
+          :select-on-key-codes="[9, 13]"
           :options="allUniversities"
           :placeholder="t('main.select_university')"
           :filter-by="uniFilter"
           @update:model-value="setUni"
+          @close="focusCourse"
         />
         <div class="flex justify-center mt-2">
           <VSelect
+            id="course_select"
             class="style-chooser grow"
             placeholder="ex. CSCE 121 Fall 2022"
             :clear-search-on-blur="() => false"
@@ -96,14 +96,17 @@ fetchUniversities()
           </button>
         </div>
         <div class="flex justify-center mt-2 gap-5">
-          <Popper hover content=" " @open:popper="setShowPopper(1)">
+          <Popper hover @open:popper="setShowPopper(1)">
             <span class="text-sm underline cursor-help">{{ t('main.not_sure') }}</span>
+            <template #content />
           </Popper>
-          <Popper hover content=" " @open:popper="setShowPopper(2)">
+          <Popper hover @open:popper="setShowPopper(2)">
             <span class="text-sm underline cursor-help">{{ t("main.missing_uni") }}</span>
+            <template #content />
           </Popper>
-          <Popper hover content=" " @open:popper="setShowPopper(3)">
+          <Popper hover @open:popper="setShowPopper(3)">
             <span class="text-sm underline cursor-help">{{ t("main.how_to_search") }}</span>
+            <template #content />
           </Popper>
         </div>
       </div>
