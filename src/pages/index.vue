@@ -66,7 +66,7 @@ fetchUniversities()
 </script>
 
 <template>
-  <main class="flex flex-col grow px-2">
+  <main class="flex flex-col grow px-2" @click="setShowPopper(0)">
     <div class="h-[20vh]" />
     <div class="flex flex-col p-2">
       <div class="text-2xl font-900 my-5 sm:text-4xl">
