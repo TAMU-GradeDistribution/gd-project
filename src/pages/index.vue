@@ -1,65 +1,17 @@
 <script setup lang="ts">
+import type { University } from '~/types'
+
 const { t } = useI18n()
 const router = useRouter()
 
-interface University {
-  value: string
-  label: string
-}
-
-class University {
-  constructor(value: string, label: string) {
-    this.value = value
-    this.label = label
-  }
-}
-
 const showPopper = ref(0)
-const searchString = ref('')
-const currentUniversity = ref<University>(new University('', ''))
-const allUniversities = $ref<Array<University>>(new Array<University>())
 
 const setShowPopper = (value: number) => showPopper.value = value
-const focusCourse = () => document.getElementById('course_select')!.querySelector('input')!.focus()
-const uniFilter = (option: any, label: string, search: string) => `${option.value} ${label}`.toLocaleLowerCase().includes(search.toLocaleLowerCase())
-const setCourse = (search: string) => searchString.value = search
-const setUni = (selection: University) => {
-  currentUniversity.value = selection
-  if (selection === null)
-    currentUniversity.value = new University('', '')
-}
-const search = () => {
-  if (!currentUniversity.value.value || !searchString.value)
+const search = (selectedUni: University, searchString: string) => {
+  if (!selectedUni.value || !searchString)
     return
-  router.push({ path: '/search', query: { u: currentUniversity.value.value, s: searchString.value } })
+  router.push({ path: '/search', query: { u: selectedUni.value, s: searchString } })
 }
-
-const fetchUniversities = async () => {
-  // const response = await fetch('/api/v1/universities')
-  // const data = await response.json()
-  // allUniversities.value = data.map((uni: any) => new University(uni.id, uni.name))
-
-  // TODO: remove and populate from API
-  allUniversities.length = 0
-
-  allUniversities.push(new University('TAMU', 'Texas A&M University, College Station'))
-  allUniversities.push(new University('TAMUT', 'Texas A&M University, Texarkana'))
-  allUniversities.push(new University('TAMUCC', 'Texas A&M University, Corpus Christi'))
-  allUniversities.push(new University('TAMUK', 'Texas A&M University, Kingsville'))
-  allUniversities.push(new University('TAMUQ', 'Texas A&M University, Qatar'))
-  allUniversities.push(new University('TAMUSA', 'Texas A&M University, San Antonio'))
-  allUniversities.push(new University('TAMUC', 'Texas A&M University, Commerce'))
-
-  allUniversities.push(new University('UT', 'University of Texas, Austin'))
-  allUniversities.push(new University('UTA', 'University of Texas, Arlington'))
-  allUniversities.push(new University('UTD', 'University of Texas, Dallas'))
-  allUniversities.push(new University('UTEP', 'University of Texas, El Paso'))
-  allUniversities.push(new University('UTSA', 'University of Texas, San Antonio'))
-  allUniversities.push(new University('UTRGV', 'University of Texas, Rio Grande Valley'))
-
-  allUniversities.sort((a, b) => a.label.localeCompare(b.label))
-}
-fetchUniversities()
 </script>
 
 <template>
@@ -70,31 +22,7 @@ fetchUniversities()
         The GDProject
       </div>
       <div class="mx-auto min-w-90 sm:min-w-120">
-        <VSelect
-          class="style-chooser mx-auto"
-          :select-on-key-codes="[9, 13]"
-          :options="allUniversities"
-          :placeholder="t('main.select_university')"
-          :filter-by="uniFilter"
-          @update:model-value="setUni"
-          @close="focusCourse"
-        />
-        <div class="flex justify-center mt-2">
-          <VSelect
-            id="course_select"
-            class="style-chooser grow"
-            placeholder="ex. CSCE 121 Fall 2022"
-            :clear-search-on-blur="() => false"
-            :no-drop="true"
-            @search="setCourse"
-            @keydown.enter="search"
-          />
-          <button class="min-w-10 hover:bg-[var(--light-2)] hover:dark:bg-[var(--dark-2)] border-[var(--dark-1)] dark:border-[var(--light-1)] border-1 border-l-none rd-r-1">
-            <div class="flex h-full" @click="search">
-              <div class="m-auto" i-carbon-search />
-            </div>
-          </button>
-        </div>
+        <Search @on-search="search" />
         <div class="flex justify-center mt-2 gap-5">
           <Popper hover @open:popper="setShowPopper(1)">
             <span class="text-sm underline cursor-help">{{ t('main.not_sure') }}</span>
@@ -116,7 +44,7 @@ fetchUniversities()
           There are a ton of good reasons to do this before picking a class or professor.
           For more information check out the
           <RouterLink class="icon-btn" to="/about" :title="t('link.about')">
-            about <div class="inline-block vertical-middle" i-carbon-help />
+            about <div class="inline-block vertical-middle" i-carbon:help />
           </RouterLink>
           page.
         </div>
@@ -125,7 +53,7 @@ fetchUniversities()
           There is a pretty good chance that it hasn't been added yet.
           Feel free to request it
           <a class="icon-btn" href="https://github.com/GDProject/gd-parser/README#request-a-university/" title="{{ t('link.request_uni') }}">
-            here. <div class="inline-block vertical-middle" i-carbon-request-quote />
+            here. <div class="inline-block vertical-middle" i-carbon:request-quote />
           </a>
         </div>
         <div v-show="showPopper === 3">
