@@ -13,17 +13,17 @@ title: About | GDProject
 
   Unfortunately, this data is often difficult to find or understand.
   Universities tend to release this data in formats such as CSVs and plain PDFs which are hard to analyze.
-  
+
   The GDProject aims to make all of this data more accessible.
   We do this by providing a centralized location, analysis tools, and a simple but powerful interface to explore it.
 
   No longer shall you run the risk of unknowingly taking a course with a bad professor!
 
-  Check out the [GDProject Organization](https://github.com/GDProject) for more details.
-  
+  Check out the [GDProject on GitHub](https://github.com/GDProject) for more details or reach out to us by email [here](mailto:gdproject@adibarra.com).
+
   <br>
   <br>
-  
+
   <div class="text-center">
     <h3>How does it work?</h3>
   </div>
