@@ -11,7 +11,7 @@ const { t } = useI18n()
       <div class="grow" />
       <nav class="flex my-auto gap-x5 sm:text-xl">
         <RouterLink class="icon-btn" to="/" :title="t('link.home')">
-          <div i-carbon:search />
+          <div i-carbon:home />
         </RouterLink>
         <RouterLink class="icon-btn" to="/about" :title="t('link.about')">
           <div i-carbon:help />
@@ -21,9 +21,6 @@ const { t } = useI18n()
         </button>
         <a class="icon-btn" href="https://github.com/GDProject/gd-website" target="_blank" :title="t('link.github')">
           <div i-carbon:logo-github />
-        </a>
-        <a class="icon-btn" href="mailto:gdproject@adibarra.com" target="_blank" :title="t('link.email')">
-          <div i-carbon:email />
         </a>
         <button class="icon-btn" :title="t('header.toggle_dark')" @click="toggleDark()">
           <div i="carbon-sun dark:carbon-moon" />
