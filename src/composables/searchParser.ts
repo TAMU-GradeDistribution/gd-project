@@ -1,27 +1,28 @@
-export const searchParser = (query: string) => {
-  const result = { department: '', course: '', section: '', year: '', semester: '', professor: '' }
+export const searchParser = (university: string, queryString: string) => {
+  const query = { uni: university, dep: '', course: '', sec: '', year: '', sem: '', prof: '' }
 
-  query.split(' ').forEach((word: string) => {
+  queryString.split(' ').forEach((word: string) => {
     switch (true) {
-      case result.department.length === 0 && word.length === 4 && isNaN(Number(word)) && !['FALL', 'SPRING', 'SUMMER'].includes(word.toLocaleUpperCase()):
-        result.department = word
+      case query.dep.length === 0 && word.length === 4 && isNaN(Number(word)) && !['FALL', 'SPRING', 'SUMMER'].includes(word.toLocaleUpperCase()):
+        query.dep = word
         break
-      case result.course.length === 0 && word.length >= 3 && word.length !== 4 && (!isNaN(Number(word)) || word.includes('.')):
-        result.course = word.includes('.') ? word.split('.')[0] : word
-        result.section = word.includes('.') ? word.split('.')[1] : ''
+      case query.course.length === 0 && word.length >= 3 && word.length !== 4 && (!isNaN(Number(word)) || word.includes('.')):
+        query.course = word.includes('.') ? word.split('.')[0] : word
+        query.sec = word.includes('.') ? word.split('.')[1] : ''
         break
-      case result.year.length === 0 && word.length === 4 && !isNaN(Number(word)):
-        result.year = word
+      case query.year.length === 0 && word.length === 4 && !isNaN(Number(word)):
+        query.year = word
         break
-      case result.semester.length === 0 && ['FALL', 'SPRING', 'SUMMER'].includes(word.toLocaleUpperCase()):
-        result.semester = word
+      case query.sem.length === 0 && ['FALL', 'SPRING', 'SUMMER'].includes(word.toLocaleUpperCase()):
+        query.sem = word
         break
       default:
-        result.professor += `${word} `
+        query.prof += `${word} `
     }
   })
 
-  result.professor = result.professor.trim()
+  query.prof = query.prof.trim()
 
-  return result
+  // remove empty keys to reduce url query length
+  return Object.fromEntries(Object.entries(query).filter(([_, v]) => v !== ''))
 }

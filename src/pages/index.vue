@@ -1,17 +1,9 @@
 <script setup lang="ts">
-import type { University } from '~/types'
-
 const { t } = useI18n()
-const router = useRouter()
 
 const showPopper = ref(0)
 
 const setShowPopper = (value: number) => showPopper.value = value
-const search = (selectedUni: University, searchString: string) => {
-  if (!selectedUni.value || !searchString)
-    return
-  router.push({ path: '/search', query: { u: selectedUni.value, s: searchString } })
-}
 </script>
 
 <template>
@@ -22,7 +14,7 @@ const search = (selectedUni: University, searchString: string) => {
         The GDProject
       </div>
       <div class="mx-auto min-w-90 sm:min-w-120">
-        <Search @on-search="search" />
+        <Search />
         <div class="flex justify-center mt-2 gap-5">
           <Popper hover @open:popper="setShowPopper(1)">
             <span class="text-sm underline cursor-help">{{ t('main.not_sure') }}</span>
@@ -67,44 +59,6 @@ const search = (selectedUni: University, searchString: string) => {
     </div>
   </main>
 </template>
-
-<style lang="scss">
-.style-chooser {
-  .vs__dropdown-toggle,
-  .vs__dropdown-menu {
-    border: 1px solid;
-    background: var(--light-1);
-    &:hover {
-      background: var(--light-2);
-    }
-    html.dark & {
-      background: var(--dark-1);
-      &:hover {
-        background: var(--dark-2);
-      }
-    }
-  }
-  .vs__search::placeholder {
-    color: var(--dark-3);
-    html.dark & {
-      color: var(--light-3);
-    }
-  }
-  .vs__selected {
-    color: var(--dark-1);
-    html.dark & {
-      color: var(--light-1);
-    }
-  }
-  .vs__clear,
-  .vs__open-indicator {
-    fill: var(--dark-1);
-    html.dark & {
-      fill: var(--light-1);
-    }
-  }
-}
-</style>
 
 <route lang="yaml">
 meta:
