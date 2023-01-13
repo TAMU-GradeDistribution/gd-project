@@ -11,7 +11,6 @@ const sState = useSearchState()
             <div class="flex flex-row pb-4px border-[var(--dark-1)] dark:border-[var(--light-1)] b-1 rd-1">
               <div class="vs__selected-options">
                 <input
-                  id="text_input"
                   class="vs__search"
                   placeholder="ex. CSCE 121.203 Fall 2022 Smith, J."
                   :value="sState.course.valueRaw"
