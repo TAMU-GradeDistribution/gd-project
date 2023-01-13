@@ -8,11 +8,12 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Markdown from 'vite-plugin-vue-markdown'
-import VueI18n from '@intlify/vite-plugin-vue-i18n'
-import Inspect from 'vite-plugin-inspect'
+import { VitePWA } from 'vite-plugin-pwa'
+import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import LinkAttributes from 'markdown-it-link-attributes'
 import Unocss from 'unocss/vite'
 import Shiki from 'markdown-it-shiki'
+import VueMacros from 'unplugin-vue-macros/vite'
 
 export default defineConfig({
   resolve: {
@@ -24,9 +25,13 @@ export default defineConfig({
   plugins: [
     Preview(),
 
-    Vue({
-      include: [/\.vue$/, /\.md$/],
-      reactivityTransform: true,
+    VueMacros({
+      plugins: {
+        vue: Vue({
+          include: [/\.vue$/, /\.md$/],
+          reactivityTransform: true,
+        }),
+      },
     }),
 
     // https://github.com/hannoeru/vite-plugin-pages
@@ -50,7 +55,7 @@ export default defineConfig({
       dts: 'src/auto-imports.d.ts',
       dirs: [
         'src/composables',
-        'src/store',
+        'src/stores',
       ],
       vueTemplate: true,
     }),
@@ -91,16 +96,42 @@ export default defineConfig({
       },
     }),
 
-    // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
+    // https://github.com/antfu/vite-plugin-pwa
+    VitePWA({
+      registerType: 'autoUpdate',
+      includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
+      manifest: {
+        name: 'GDProject',
+        short_name: 'GDProject',
+        theme_color: '#121212',
+        icons: [
+          {
+            src: '/android-chrome-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/android-chrome-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
+          {
+            src: '/android-chrome-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+            purpose: 'any maskable',
+          },
+        ],
+      },
+    }),
+
+    // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
     VueI18n({
       runtimeOnly: true,
       compositionOnly: true,
+      fullInstall: true,
       include: [path.resolve(__dirname, 'locales/**')],
     }),
-
-    // https://github.com/antfu/vite-plugin-inspect
-    // Visit http://localhost:3333/__inspect/ to see the inspector
-    Inspect(),
   ],
 
   // https://github.com/antfu/vite-ssg
