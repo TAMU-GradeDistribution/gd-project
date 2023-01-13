@@ -4,7 +4,7 @@
   "version": "2.0.0",
   "private": true,
   "packageManager": "pnpm@7.24.3",
-  "author": "adibarra <93070681+adibarra@users.noreply.github.com>",
+  "author": "adibarra <github@adibarra.com> (https://adibarra.com)",
   "license": "MIT",
   "scripts": {
     "commit": "git-cz",
@@ -73,12 +73,5 @@
     "commitizen": {
       "path": "node_modules/cz-conventional-changelog"
     }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/GDProject/gd-website.git"
-  },
-  "bugs": {
-    "url": "https://github.com/GDProject/gd-website/issues"
   }
 }
