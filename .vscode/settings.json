@@ -1,19 +1,15 @@
 {
   "cSpell.words": [
-    "adibarra",
+    "antfu",
     "Attributify",
-    "Composables",
-    "CSCE",
+    "composables",
     "demi",
-    "dicom",
-    "forceupdate",
-    "gdproject",
     "iconify",
     "intlify",
+    "noopener",
     "nprogress",
     "pinia",
     "pnpm",
-    "Roadmap",
     "Shiki",
     "subflow",
     "taze",
@@ -22,16 +18,13 @@
     "unplugin",
     "Vite",
     "vitejs",
-    "vitesse",
-    "vuetify",
+    "Vitesse",
     "vueuse"
   ],
   "i18n-ally.displayLanguage": "en-US",
   "i18n-ally.sourceLanguage": "en-US",
   "i18n-ally.keystyle": "nested",
-  "i18n-ally.localesPaths": [
-    "locales"
-  ],
+  "i18n-ally.localesPaths": "locales",
   "i18n-ally.sortKeys": true,
   "prettier.enable": false,
   "editor.codeActionsOnSave": {

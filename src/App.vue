@@ -1,17 +1,15 @@
 <script setup lang="ts">
-const scrollbar = ref(null)
+const scrollbar = ref()
 onMounted(() => {
   useRouter().afterEach(() => {
-    // @ts-expect-error ref should be valid after onMounted
     scrollbar.value.$el.scrollTop = 0
-    // @ts-expect-error ref should be valid after onMounted
     scrollbar.value.update()
   })
 })
 </script>
 
 <template>
-  <perfect-scrollbar ref="scrollbar" class="h-inherit">
+  <perfect-scrollbar ref="scrollbar" h-inherit>
     <RouterView />
   </perfect-scrollbar>
 </template>
