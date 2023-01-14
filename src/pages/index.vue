@@ -2,14 +2,14 @@
 const { t } = useI18n()
 const sState = useSearchState()
 
-const showPopper = ref(0)
+const helpText = ref(0)
+const courseSearch = ref<HTMLElement>()
 
-const setShowPopper = (value: number) => showPopper.value = value
-const focusCourse = () => document.getElementById('text_input')!.focus()
+const showHelp = (id: number) => helpText.value = id
 </script>
 
 <template>
-  <main class="flex flex-col grow px-2" @click="setShowPopper(0)">
+  <main class="flex flex-col grow px-2" @click="showHelp(0)">
     <div class="h-[20vh]" />
     <div class="flex flex-col p-2">
       <div class="text-2xl font-900 my-5 sm:text-4xl">
@@ -23,7 +23,7 @@ const focusCourse = () => document.getElementById('text_input')!.focus()
           :options="sState.university.allRaw"
           :placeholder="t('main.select_university')"
           :filter-by="sState.university.filter"
-          @close="focusCourse"
+          @close="courseSearch!.focus()"
         />
         <div class="h-2" />
         <div class="flex justify-center">
@@ -31,7 +31,7 @@ const focusCourse = () => document.getElementById('text_input')!.focus()
             <div class="flex flex-row pb-4px border-[var(--dark-1)] dark:border-[var(--light-1)] b-1 rd-1">
               <div class="vs__selected-options">
                 <input
-                  id="text_input"
+                  ref="courseSearch"
                   class="vs__search"
                   placeholder="ex. CSCE 121.203 Fall 2022 Smith, J."
                   :value="sState.course.valueRaw"
@@ -62,44 +62,35 @@ const focusCourse = () => document.getElementById('text_input')!.focus()
           </button>
         </div>
         <div class="flex justify-center mt-2 gap-5">
-          <Popper hover @open:popper="setShowPopper(1)">
-            <span class="text-sm underline cursor-help">{{ t('main.not_sure') }}</span>
-            <template #content />
-          </Popper>
-          <Popper hover @open:popper="setShowPopper(2)">
-            <span class="text-sm underline cursor-help">{{ t("main.missing_uni") }}</span>
-            <template #content />
-          </Popper>
-          <Popper hover @open:popper="setShowPopper(3)">
-            <span class="text-sm underline cursor-help">{{ t("main.how_to_search") }}</span>
-            <template #content />
-          </Popper>
+          <span class="text-sm underline cursor-help" @mouseenter="showHelp(1)">{{ t('main.not_sure') }}</span>
+          <span class="text-sm underline cursor-help" @mouseenter="showHelp(2)">{{ t("main.missing_uni") }}</span>
+          <span class="text-sm underline cursor-help" @mouseenter="showHelp(3)">{{ t("main.how_to_search") }}</span>
         </div>
-      </div>
-      <div class="flex flex-col text-justify op-75 mx-auto mt-5 max-w-90 sm:max-w-120">
-        <div v-show="showPopper === 1">
-          This website lets you check out the grade distribution of courses at your university.
-          There are a ton of good reasons to do this before picking a class or professor.
-          For more information check out the
-          <RouterLink class="icon-btn" to="/about" :title="t('link.about')">
-            about <div class="inline-block vertical-middle" i-carbon:help />
-          </RouterLink>
-          page.
-        </div>
-        <div v-show="showPopper === 2">
-          Can't find your university in the selection dropdown?
-          There is a pretty good chance that it hasn't been added yet.
-          Feel free to request it
-          <a class="icon-btn" href="https://github.com/GDProject/gd-parser/README#request-a-university/" title="{{ t('link.request_uni') }}">
-            here. <div class="inline-block vertical-middle" i-carbon:request-quote />
-          </a>
-        </div>
-        <div v-show="showPopper === 3">
-          First select your university in the first dropdown.
-          Then type in a department and course number in the second dropdown.
-          You can optionally include a section number, semester, year, and professor.
-          <br><br>
-          EX: "CSCE 121 Fall 2022" or "CSCE 121.509 2022 Smith".
+        <div class="flex flex-col text-justify op-75 mx-auto mt-5 max-w-90 sm:max-w-120">
+          <div v-show="helpText === 1" @click.stop>
+            This website lets you check out the grade distribution of courses at your university.
+            There are a ton of good reasons to do this before picking a class or professor.
+            For more information check out the
+            <RouterLink class="icon-btn" to="/about" :title="t('link.about')">
+              about <div class="inline-block vertical-middle" i-carbon:help />
+            </RouterLink>
+            page.
+          </div>
+          <div v-show="helpText === 2" @click.stop>
+            Can't find your university in the selection dropdown?
+            There is a pretty good chance that it hasn't been added yet.
+            Feel free to request it
+            <a class="icon-btn" href="https://github.com/GDProject/gd-parser/README#request-a-university/" :title="t('link.request_uni')">
+              here. <div class="inline-block vertical-middle" i-carbon:request-quote />
+            </a>
+          </div>
+          <div v-show="helpText === 3" @click.stop>
+            First select your university in the first dropdown.
+            Then type in a department and course number in the second dropdown.
+            You can optionally include a section number, semester, year, and professor.
+            <br><br>
+            EX: "CSCE 121 Fall 2022" or "CSCE 121.509 2022 Smith".
+          </div>
         </div>
       </div>
     </div>
