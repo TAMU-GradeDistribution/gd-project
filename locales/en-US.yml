@@ -26,6 +26,7 @@ link:
 # text used in buttons
 button:
   back: Back
+  clear: Clear
   go: GO
   search: Search
 
