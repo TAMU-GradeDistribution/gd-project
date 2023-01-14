@@ -4,7 +4,7 @@ title: About | GDProject
 
 <div class="mx-5 my-10">
   <div class="text-center">
-    <div i-carbon-subflow class="text-4xl m-auto -mb-6" />
+    <div i-carbon:subflow class="text-4xl m-auto -mb-6" />
     <h3>About the GDProject</h3>
   </div>
 

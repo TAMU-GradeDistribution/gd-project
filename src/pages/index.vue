@@ -6,29 +6,30 @@ const helpText = ref(0)
 const courseSearch = ref<HTMLElement>()
 
 const showHelp = (id: number) => helpText.value = id
+const isHelpShown = (id: number) => helpText.value === id
 </script>
 
 <template>
-  <main class="flex flex-col grow px-2" @click="showHelp(0)">
-    <div class="h-[20vh]" />
-    <div class="flex flex-col p-2">
-      <div class="text-2xl font-900 my-5 sm:text-4xl">
+  <main flex flex-col grow px-2 @click="showHelp(0)">
+    <div h-20vh />
+    <div flex flex-col p-2>
+      <div text-2xl font-900 my-5 sm:text-4xl>
         The GDProject
       </div>
-      <div class="mx-auto min-w-90 sm:min-w-120">
+      <div mx-auto min-w-90 sm:min-w-120>
         <VSelect
           v-model="sState.university.selectedRaw"
-          class="style-chooser mx-auto"
+          class="style-chooser" mx-auto
           :select-on-key-codes="[9, 13]"
           :options="sState.university.allRaw"
           :placeholder="t('main.select_university')"
           :filter-by="sState.university.filter"
           @close="courseSearch!.focus()"
         />
-        <div class="h-2" />
-        <div class="flex justify-center">
-          <div class="grow style-chooser">
-            <div class="flex flex-row pb-4px border-[var(--dark-1)] dark:border-[var(--light-1)] b-1 rd-1">
+        <div h-2 />
+        <div flex justify-center>
+          <div class="style-chooser" grow>
+            <div class="border-[var(--dark-1)] dark:border-[var(--light-1)]" flex flex-row pb-4px b-1 rd-1>
               <div class="vs__selected-options">
                 <input
                   ref="courseSearch"
@@ -44,8 +45,8 @@ const showHelp = (id: number) => helpText.value = id
                 <button
                   v-show="!sState.course.isEmpty"
                   type="button"
-                  class="fill-black dark:fill-white cursor-pointer mr-1"
-                  title="Clear"
+                  :title="t('button.clear')"
+                  fill-black dark:fill-white cursor-pointer mr-1
                   @click="sState.course.clear"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10">
@@ -55,36 +56,36 @@ const showHelp = (id: number) => helpText.value = id
               </div>
             </div>
           </div>
-          <button class="min-w-10 hover:bg-[var(--light-2)] hover:dark:bg-[var(--dark-2)] border-[var(--dark-1)] dark:border-[var(--light-1)] b-1 b-l-none rd-r-1">
-            <div class="flex h-full" @click="sState.course.search">
-              <div class="m-auto" i-carbon:search />
+          <button class="hover:bg-[var(--light-2)] hover:dark:bg-[var(--dark-2)] border-[var(--dark-1)] dark:border-[var(--light-1)]" min-w-10 b-1 b-l-none rd-r-1>
+            <div :title="t('button.search')" flex h-full @click="sState.course.search">
+              <div i-carbon:search m-auto />
             </div>
           </button>
         </div>
-        <div class="flex justify-center mt-2 gap-5">
-          <span class="text-sm underline cursor-help" @mouseenter="showHelp(1)">{{ t('main.not_sure') }}</span>
-          <span class="text-sm underline cursor-help" @mouseenter="showHelp(2)">{{ t("main.missing_uni") }}</span>
-          <span class="text-sm underline cursor-help" @mouseenter="showHelp(3)">{{ t("main.how_to_search") }}</span>
+        <div flex justify-center mt-2 gap-5>
+          <span text-sm underline cursor-help @mouseenter="showHelp(1)">{{ t('main.not_sure') }}</span>
+          <span text-sm underline cursor-help @mouseenter="showHelp(2)">{{ t("main.missing_uni") }}</span>
+          <span text-sm underline cursor-help @mouseenter="showHelp(3)">{{ t("main.how_to_search") }}</span>
         </div>
-        <div class="flex flex-col text-justify op-75 mx-auto mt-5 max-w-90 sm:max-w-120">
-          <div v-show="helpText === 1" @click.stop>
+        <div flex flex-col text-justify op-75 mx-auto mt-5 max-w-90 sm:max-w-120>
+          <div v-show="isHelpShown(1)" @click.stop>
             This website lets you check out the grade distribution of courses at your university.
             There are a ton of good reasons to do this before picking a class or professor.
             For more information check out the
-            <RouterLink class="icon-btn" to="/about" :title="t('link.about')">
-              about <div class="inline-block vertical-middle" i-carbon:help />
+            <RouterLink to="/about" :title="t('link.about')" icon-btn>
+              about <div i-carbon:help inline-block vertical-middle />
             </RouterLink>
             page.
           </div>
-          <div v-show="helpText === 2" @click.stop>
+          <div v-show="isHelpShown(2)" @click.stop>
             Can't find your university in the selection dropdown?
             There is a pretty good chance that it hasn't been added yet.
             Feel free to request it
-            <a class="icon-btn" href="https://github.com/GDProject/gd-parser/README#request-a-university/" :title="t('link.request_uni')">
-              here. <div class="inline-block vertical-middle" i-carbon:request-quote />
+            <a href="https://github.com/GDProject/gd-parser/README#request-a-university/" :title="t('link.request_uni')" icon-btn>
+              here. <div i-carbon:request-quote inline-block vertical-middle />
             </a>
           </div>
-          <div v-show="helpText === 3" @click.stop>
+          <div v-show="isHelpShown(3)" @click.stop>
             First select your university in the first dropdown.
             Then type in a department and course number in the second dropdown.
             You can optionally include a section number, semester, year, and professor.

@@ -4,25 +4,25 @@ const { t } = useI18n()
 
 <template>
   <header>
-    <div class="flex m-3">
+    <div flex m-3>
       <RouterLink to="/" :title="t('link.home')">
-        <div alt="{{ t('header.logo') }}" class="text-2xl sm:text-4xl" i-carbon-subflow />
+        <div :alt="t('header.logo')" i-carbon:subflow text-2xl sm:text-4xl />
       </RouterLink>
-      <div class="grow" />
-      <nav class="flex my-auto gap-x5 sm:text-xl">
-        <RouterLink class="icon-btn" to="/" :title="t('link.home')">
+      <div grow />
+      <nav flex my-auto gap-x5 sm:text-xl>
+        <RouterLink to="/" :title="t('link.home')" icon-btn>
           <div i-carbon:home />
         </RouterLink>
-        <RouterLink class="icon-btn" to="/about" :title="t('link.about')">
+        <RouterLink to="/about" :title="t('link.about')" icon-btn>
           <div i-carbon:help />
         </RouterLink>
-        <button class="icon-btn !hidden" :title="t('header.select_lang')">
+        <button :title="t('header.select_lang')" icon-btn hidden>
           <div i-carbon:language />
         </button>
-        <a class="icon-btn" href="https://github.com/GDProject/gd-website" target="_blank" :title="t('link.github')">
+        <a href="https://github.com/GDProject/gd-website" target="_blank" :title="t('link.github')" icon-btn>
           <div i-carbon:logo-github />
         </a>
-        <button class="icon-btn" :title="t('header.toggle_dark')" @click="toggleDark()">
+        <button :title="t('header.toggle_dark')" icon-btn @click="toggleDark()">
           <div i="carbon-sun dark:carbon-moon" />
         </button>
       </nav>

@@ -10,8 +10,8 @@ const router = useRouter()
         <span text-red>404:&nbsp;</span>
         {{ t('error.not-found') }}
       </div>
-      <button icon-btn flex flex-row text-lg w-fit mt-2 mr-auto :title="t('link.go_back')" @click="router.back()">
-        <div i-carbon-caret-left text-2xl />{{ t('link.go_back') }}
+      <button :title="t('link.go_back')" icon-btn flex flex-row text-lg w-fit mt-2 mr-auto @click="router.back()">
+        <div i-carbon:caret-left text-2xl />{{ t('link.go_back') }}
       </button>
     </div>
   </div>

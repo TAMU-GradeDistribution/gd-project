@@ -1,14 +1,15 @@
 <script setup lang="ts">
+const { t } = useI18n()
 const sState = useSearchState()
 </script>
 
 <template>
-  <main class="flex flex-col grow px-2">
-    <div class="flex flex-col py-2">
-      <div class="mx-auto min-w-90 sm:min-w-120">
-        <div class="flex justify-center">
-          <div class="grow style-chooser">
-            <div class="flex flex-row pb-4px border-[var(--dark-1)] dark:border-[var(--light-1)] b-1 rd-1">
+  <main flex flex-col grow px-2>
+    <div flex flex-col py-2>
+      <div mx-auto min-w-90 sm:min-w-120>
+        <div flex justify-center>
+          <div class="style-chooser" grow>
+            <div class="border-[var(--dark-1)] dark:border-[var(--light-1)]" flex flex-row pb-4px b-1 rd-1>
               <div class="vs__selected-options">
                 <input
                   class="vs__search"
@@ -23,8 +24,8 @@ const sState = useSearchState()
                 <button
                   v-show="!sState.course.isEmpty"
                   type="button"
-                  class="fill-black dark:fill-white cursor-pointer mr-1"
-                  title="Clear"
+                  :title="t('button.clear')"
+                  fill-black dark:fill-white cursor-pointer mr-1
                   @click="sState.course.clear"
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10">
@@ -34,16 +35,16 @@ const sState = useSearchState()
               </div>
             </div>
           </div>
-          <button class="min-w-10 hover:bg-[var(--light-2)] hover:dark:bg-[var(--dark-2)] border-[var(--dark-1)] dark:border-[var(--light-1)] b-1 b-l-none rd-r-1">
-            <div class="flex h-full" @click="sState.course.search">
-              <div class="m-auto" i-carbon:search />
+          <button class="hover:bg-[var(--light-2)] hover:dark:bg-[var(--dark-2)] border-[var(--dark-1)] dark:border-[var(--light-1)]" min-w-10 b-1 b-l-none rd-r-1>
+            <div :title="t('button.search')" flex h-full @click="sState.course.search">
+              <div i-carbon:search m-auto />
             </div>
           </button>
         </div>
       </div>
     </div>
-    <div class="flex flex-col py-2">
-      <div class="mx-auto text-center">
+    <div flex flex-col py-2>
+      <div mx-auto text-center>
         charts go here
       </div>
     </div>
