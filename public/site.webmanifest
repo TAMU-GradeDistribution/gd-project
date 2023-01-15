@@ -1,6 +1,6 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "GDProject",
+    "short_name": "GDProject",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
