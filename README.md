@@ -39,7 +39,7 @@ This project aims to help analyze the massive amounts of course data and statist
 
 In order to do this, our goal is to create a web app that will allow users to easily search for courses and view statistics about them.
 
-The project can be seen in action at [gd.adibarra.com](https://gd.adibarra.com/).
+The project can be seen in action at [here](https://gd.adibarra.com/).
 
 ## Getting Started
 
