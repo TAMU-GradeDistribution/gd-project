@@ -31,13 +31,11 @@ title: About | GDProject
   <span class="font-900">First</span>, we go to each of the supported/implemented university websites to get a list of all currently available data.
   We then sift through these links to find any new data that we haven't already processed.
   If we discover any new data we add it to a list.
-  Once this is done for each website then proceed to the next step.
 
-  <span class="font-900">Second</span>, the list of data is then gone through and each piece of data is downloaded.
-  Once all of the data has been downloaded we then proceed to the next step.
+  <span class="font-900">Second</span>, we organize and download all of the data from the list.
 
   <span class="font-900">Finally</span>, all of the freshly downloaded data is processed and transformed into the format used by the database.
-  All of the data is then added to the database and can instantly be accessed through this website.
+  It is then added to the database and can instantly be accessed through this website.
 
   Check out the [GDProject gd-parser](https://github.com/GDProject/gd-parser) for more details.
 </div>
