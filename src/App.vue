@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const scrollbar = ref()
+
 onMounted(() => {
   useRouter().afterEach(() => {
     scrollbar.value.$el.scrollTop = 0
