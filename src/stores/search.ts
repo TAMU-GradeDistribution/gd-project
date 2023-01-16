@@ -3,11 +3,10 @@ import type { University } from '~/types'
 
 export const useSearchState = defineStore('search', () => {
   const router = useRouter()
-  const initialSearch = router.currentRoute.value.query.s as string
 
   const allUnis = ref<University[]>([])
   const university = ref<University>()
-  const searchString = ref<string>(initialSearch)
+  const search = ref<string>(router.currentRoute.value.query.s as string)
 
   const fetchUniversities = async () => {
     // TODO: populate from API
@@ -32,14 +31,14 @@ export const useSearchState = defineStore('search', () => {
     university: {
       allRaw: allUnis,
       selectedRaw: university,
-      filter: (option: any, label: string, search: string) => `${option.value} ${label}`.toLocaleLowerCase().includes(search.toLocaleLowerCase()),
+      filter: (option: any, label: string, query: string) => `${option.value} ${label}`.toLocaleLowerCase().includes(query.toLocaleLowerCase()),
     },
     course: {
-      valueRaw: searchString,
-      clear: () => searchString.value = '',
-      input: (e: Event) => searchString.value = (e.target as HTMLInputElement).value,
-      search: () => university.value && searchString.value && router.push({ path: '/search', query: { u: university.value.value, s: searchString.value } }),
-      isEmpty: computed(() => !searchString.value),
+      valueRaw: search,
+      clear: () => search.value = '',
+      input: (e: Event) => search.value = (e.target as HTMLInputElement).value,
+      search: () => university.value && search.value && router.push({ path: '/search', query: { u: university.value.value, s: search.value } }),
+      isEmpty: computed(() => !search.value),
     },
   }
 })
