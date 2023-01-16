@@ -35,17 +35,20 @@
 
 ## About
 
-This project aims to help analyze the massive amounts of course data and statistics released every semester by many universities.
-
-In order to do this, our goal is to create a web app that will allow users to easily search for courses and view statistics about them.
+The GDProject website is a web app that allows users to search for courses and view statistics about them. The goal of this project is to provide a better way to analyze grade distributions. Currently, for most universities, the only way to do this is to manually search through massive reports or spreadsheets.
 
 The project can be seen in action at [here](https://gd.adibarra.com/).
 
 ## Getting Started
 
+If you want to run the project locally, follow the instructions below.
+
 ### Prerequisites
+
+This project uses [pnpm](https://pnpm.io/) as its package manager. It is optional, but highly recommended. If you don't have it installed, you can install it with the following command:
+
 ```bash
-# if you don't have pnpm installed
+# this will install pnpm globally
 $ npm install -g pnpm
 ```
 
