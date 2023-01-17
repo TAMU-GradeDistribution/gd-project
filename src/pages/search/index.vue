@@ -8,13 +8,11 @@ useHead({
 
 <template>
   <main flex flex-col grow px-2>
-    <div flex flex-col py-2>
-      <div mx-auto min-w-90 sm:min-w-120>
-        <CourseSearch />
-      </div>
+    <div py-2 mx-auto min-w-90 sm:min-w-120>
+      <CourseSearch />
     </div>
-    <div flex flex-col py-2>
-      <div mx-auto>
+    <div py-2>
+      <div mx-auto text-center>
         charts go here
       </div>
     </div>

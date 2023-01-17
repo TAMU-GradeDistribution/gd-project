@@ -14,26 +14,25 @@ useHead({
 </script>
 
 <template>
-  <main flex flex-col grow px-2 @click="helpSection!.hide">
-    <div h-20vh />
-    <div flex flex-col p-2>
-      <div text-2xl font-900 my-5 sm:text-4xl>
+  <main
+    flex flex-col grow px-4
+    @click="helpSection!.hide"
+  >
+    <div min-w-90 sm:min-w-120 mx-auto mt-20vh>
+      <div my-3 sm:my-5 font-900 text-3xl sm:text-4xl text-center>
         The GDProject
       </div>
-      <div mx-auto min-w-90 sm:min-w-120>
-        <VSelect
-          v-model="sState.university.selectedRaw"
-          class="style-chooser" mx-auto
-          :select-on-key-codes="[9, 13]"
-          :options="sState.university.allRaw"
-          :placeholder="t('main.select_university')"
-          :filter-by="sState.university.filter"
-          @close="courseSearch!.focus()"
-        />
-        <div h-2 />
-        <CourseSearch ref="courseSearch" />
-        <HelpSection ref="helpSection" />
-      </div>
+      <VSelect
+        v-model="sState.university.selectedRaw"
+        class="style-chooser"
+        :filter-by="sState.university.filter"
+        :options="sState.university.allRaw"
+        :placeholder="t('main.select_university')"
+        :select-on-key-codes="[9, 13]"
+        @close="courseSearch!.focus()"
+      />
+      <CourseSearch ref="courseSearch" mt-2 />
+      <HelpSection ref="helpSection" />
     </div>
   </main>
 </template>
