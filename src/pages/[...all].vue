@@ -11,26 +11,25 @@ useHead({
 </script>
 
 <template>
-  <div grow flex flex-col>
-    <div h-20vh />
+  <main grow>
     <div
       class="bg-[var(--light-2)] dark:bg-[var(--dark-2)] outline-[var(--light-3)] dark:outline-[var(--dark-3)]"
-      flex flex-col mx-auto p-5 rd-2 outline outline-1
+      w-fit p-5 mx-auto mt-20vh outline outline-1 rd-2
     >
-      <div flex font-900 text-4xl>
-        <span text-red>404:&nbsp;</span>
+      <div font-900 text-4xl>
+        <span text-red>404:</span>
         {{ t('error.not-found') }}
       </div>
       <button
         :title="t('link.go_back')"
-        icon-btn flex text-lg mt-2 mr-auto
+        icon-btn flex text-lg mt-2
         @click="router.back()"
       >
         <div i-carbon:caret-left text-2xl />
         {{ t('link.go_back') }}
       </button>
     </div>
-  </div>
+  </main>
 </template>
 
 <route lang="yaml">
