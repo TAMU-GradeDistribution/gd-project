@@ -28,7 +28,7 @@ specifiers:
   unocss: ^0.48.4
   unplugin-auto-import: ^0.12.1
   unplugin-vue-components: ^0.22.12
-  unplugin-vue-macros: ^1.4.0
+  unplugin-vue-macros: ^1.4.1
   vite: ^4.0.4
   vite-plugin-pages: ^0.28.0
   vite-plugin-pwa: ^0.14.1
@@ -81,7 +81,7 @@ devDependencies:
   unocss: 0.48.4_vite@4.0.4
   unplugin-auto-import: 0.12.1_@vueuse+core@9.11.0
   unplugin-vue-components: 0.22.12_vue@3.2.45
-  unplugin-vue-macros: 1.4.0_httr7wqcry5mq7lnplxmfdl6ve
+  unplugin-vue-macros: 1.4.1_httr7wqcry5mq7lnplxmfdl6ve
   vite: 4.0.4_sass@1.57.1
   vite-plugin-pages: 0.28.0_vite@4.0.4
   vite-plugin-pwa: 0.14.1_vite@4.0.4
@@ -2723,11 +2723,11 @@ packages:
       - vue
     dev: true
 
-  /@vue-macros/reactivity-transform-vue2/0.0.5_vue@3.2.45:
-    resolution: {integrity: sha512-RrVwXp6bjSgjJFPYPpX2LhHCoaKDaey6iYSmK9fkw8hOp5rq4prtxV3Al9hficuPrCq4FqOf/gwh3J3a/bi6LA==}
+  /@vue-macros/reactivity-transform-vue2/0.0.6_vue@3.2.45:
+    resolution: {integrity: sha512-iuRCDKOPcn7UJWslibYLnOrdzUt8n+X63rc29Q7C7R1PNoVEszm9jhGn3HUmK6bCkIJFwu3hwWc4k4wTo0SulA==}
     engines: {node: '>=14.19.0'}
     peerDependencies:
-      vue: ^2.7.0
+      vue: ^2.7.0 || ^3.2.25
     dependencies:
       '@rollup/pluginutils': 5.0.2
       '@vue-macros/common': 0.13.8_vue@3.2.45
@@ -8143,8 +8143,8 @@ packages:
       - vue
     dev: true
 
-  /unplugin-vue-macros/1.4.0_httr7wqcry5mq7lnplxmfdl6ve:
-    resolution: {integrity: sha512-Sj5/cZZ3Ohh8kvyQRURnq/1sN8U0KoKSjHT0IaoDe8z5bax6HNXbGQ1pw1/0xGKdFVx8Zu/0jUuPgCafRrMckg==}
+  /unplugin-vue-macros/1.4.1_httr7wqcry5mq7lnplxmfdl6ve:
+    resolution: {integrity: sha512-VudO4rpLgjDpXF+oP43FAVJSp7vG3hCv4uGaQX9CxBUbl4QfAf+kwlQZaF0UAQ9jN6s+OozHlVt19AOlnBOGbg==}
     engines: {node: '>=14.19.0'}
     peerDependencies:
       vue: ^2.7.0 || ^3.2.25
@@ -8158,7 +8158,7 @@ packages:
       '@vue-macros/define-slots': 0.1.4_vue@3.2.45
       '@vue-macros/hoist-static': 1.1.4_vue@3.2.45
       '@vue-macros/named-template': 0.1.4_vue@3.2.45
-      '@vue-macros/reactivity-transform-vue2': 0.0.5_vue@3.2.45
+      '@vue-macros/reactivity-transform-vue2': 0.0.6_vue@3.2.45
       '@vue-macros/setup-block': 0.0.5_vue@3.2.45
       '@vue-macros/setup-component': 0.14.1_vue@3.2.45
       '@vue-macros/setup-sfc': 0.13.4_vue@3.2.45
