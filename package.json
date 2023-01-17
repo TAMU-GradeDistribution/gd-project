@@ -1,9 +1,9 @@
 {
   "name": "gd-website",
   "type": "module",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "private": true,
-  "packageManager": "pnpm@7.24.3",
+  "packageManager": "pnpm@7.25.0",
   "author": "adibarra <github@adibarra.com> (https://adibarra.com)",
   "license": "MIT",
   "scripts": {
