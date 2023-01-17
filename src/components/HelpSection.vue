@@ -12,11 +12,11 @@ defineExpose({
 
 <template>
   <div flex mt-2 gap-5 justify-center text-sm underline>
-    <span cursor-help @mouseenter="show(1)">{{ t('main.not_sure') }}</span>
-    <span cursor-help @mouseenter="show(2)">{{ t("main.missing_uni") }}</span>
-    <span cursor-help @mouseenter="show(3)">{{ t("main.how_to_search") }}</span>
+    <span cursor-help @click.stop="show(1)" @mouseenter="show(1)">{{ t('main.not_sure') }}</span>
+    <span cursor-help @click.stop="show(2)" @mouseenter="show(2)">{{ t("main.missing_uni") }}</span>
+    <span cursor-help @click.stop="show(3)" @mouseenter="show(3)">{{ t("main.how_to_search") }}</span>
   </div>
-  <div flex flex-col mx-auto mt-5 max-w-90 sm:max-w-120 text-justify op-75>
+  <div flex flex-col mt-5 mx-auto max-w-90 sm:max-w-120 text-justify op-75>
     <div v-show="isShown(1)" @click.stop>
       This website lets you check out the grade distribution of courses at your university.
       There are a ton of good reasons to do this before picking a class or professor.
