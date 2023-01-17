@@ -4,7 +4,7 @@
     flex flex-col min-h-screen text-gray-700 dark:text-gray-200
   >
     <Header />
-    <div md:hidden dark:bg-op-50 bg-red>
+    <div md:hidden dark:bg-op-50 bg-red data-nosnippet>
       <div flex w-fit mx-auto>
         <div i-carbon:warning-alt my-auto />
         &nbsp;This website is optimized for larger screens.
