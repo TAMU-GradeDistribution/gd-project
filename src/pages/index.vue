@@ -63,10 +63,11 @@ useHead({
           </div>
           <button
             class="hover:bg-[var(--light-2)] hover:dark:bg-[var(--dark-2)] border-[var(--dark-1)] dark:border-[var(--light-1)]"
+            :title="t('button.search')"
             min-w-10 b-1 b-l-none rd-r-1
             @click="sState.course.search"
           >
-            <div i-carbon:search :title="t('button.search')" flex h-full m-auto />
+            <div i-carbon:search flex h-full m-auto />
           </button>
         </div>
         <div flex mt-2 gap-5 justify-center text-sm underline>
@@ -107,6 +108,7 @@ useHead({
 
 <style lang="scss">
 .style-chooser {
+  --vs-actions-padding: 4px 8px 0 3px;
   .vs__dropdown-toggle,
   .vs__dropdown-menu {
     border: 1px solid;
