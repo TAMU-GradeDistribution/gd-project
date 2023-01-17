@@ -1,16 +1,15 @@
 <script setup lang="ts">
 const scrollbar = ref()
 
-onMounted(() => {
+onMounted(() =>
   useRouter().afterEach(() => {
-    scrollbar.value.$el.scrollTop = 0
-    scrollbar.value.update()
-  })
-})
+    scrollbar.value.ps.element.scrollTop = 0
+    scrollbar.value.ps.update()
+  }))
 </script>
 
 <template>
-  <perfect-scrollbar ref="scrollbar" h-inherit>
+  <PerfectScrollbar ref="scrollbar" h-inherit>
     <RouterView />
-  </perfect-scrollbar>
+  </PerfectScrollbar>
 </template>
