@@ -7,6 +7,10 @@ const courseSearch = ref<HTMLElement>()
 
 const showHelp = (id: number) => helpText.value = id
 const isHelpShown = (id: number) => helpText.value === id
+
+useHead({
+  title: 'GDProject',
+})
 </script>
 
 <template>
