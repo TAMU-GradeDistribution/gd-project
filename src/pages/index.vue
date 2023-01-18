@@ -16,7 +16,7 @@ useHead({
 <template>
   <main
     flex flex-col grow px-4
-    @click="helpSection!.hide"
+    @click="helpSection?.hide"
   >
     <div min-w-90 sm:min-w-120 mx-auto mt-20vh>
       <div my-3 sm:my-5 font-900 text-3xl sm:text-4xl text-center>
@@ -25,11 +25,12 @@ useHead({
       <VSelect
         v-model="sState.university.selectedRaw"
         class="style-chooser"
-        :filter-by="sState.university.filter"
+        :filter="sState.university.filter"
         :options="sState.university.allRaw"
         :placeholder="t('main.select_university')"
         :select-on-key-codes="[9, 13]"
-        @close="courseSearch!.focus()"
+        @close="courseSearch?.focus"
+        @search="sState.university.update"
       />
       <CourseSearch ref="courseSearch" mt-2 />
       <HelpSection ref="helpSection" />
