@@ -1,5 +1,4 @@
 <script setup lang="ts">
-const { t } = useI18n()
 const sState = useSearchState()
 
 const search = ref<HTMLInputElement | null>(null)
@@ -28,7 +27,7 @@ defineExpose({
           <button
             v-show="!sState.course.isEmpty"
             type="reset"
-            :title="t('button.clear')"
+            title="Clear"
             fill-black dark:fill-white cursor-pointer mr-1
             @click="sState.course.clear"
           >
@@ -42,7 +41,7 @@ defineExpose({
     </div>
     <button
       class="hover:bg-[var(--light-2)] hover:dark:bg-[var(--dark-2)] border-[var(--dark-1)] dark:border-[var(--light-1)]"
-      :title="t('button.search')"
+      title="Search"
       min-w-10 b-1 b-l-none rd-r-1
       @click="sState.course.search"
     >

@@ -2,7 +2,6 @@
 import CourseSearch from '~/components/CourseSearch.vue'
 import HelpSection from '~/components/HelpSection.vue'
 
-const { t } = useI18n()
 const sState = useSearchState()
 
 const courseSearch = ref<InstanceType<typeof CourseSearch> | null>(null)
@@ -27,7 +26,7 @@ useHead({
         class="style-chooser"
         :filter="sState.university.filter"
         :options="sState.university.allRaw"
-        :placeholder="t('main.select_university')"
+        placeholder="Select your university"
         :select-on-key-codes="[9, 13]"
         @close="courseSearch?.focus"
         @search="sState.university.update"

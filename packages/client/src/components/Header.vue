@@ -1,12 +1,8 @@
-<script setup lang="ts">
-const { t } = useI18n()
-</script>
-
 <template>
   <header flex m-3>
     <RouterLink
       to="/"
-      :title="t('header.logo')"
+      title="Logo"
     >
       <div i-carbon:subflow text-2xl sm:text-4xl />
     </RouterLink>
@@ -14,33 +10,28 @@ const { t } = useI18n()
     <nav flex my-auto gap-x5 sm:text-xl>
       <RouterLink
         to="/"
-        :title="t('link.home')"
+        title="Home"
         icon-btn
       >
         <div i-carbon:home />
       </RouterLink>
       <RouterLink
         to="/about"
-        :title="t('link.about')"
+        title="About"
         icon-btn
       >
         <div i-carbon:help />
       </RouterLink>
-      <button
-        :title="t('header.select_lang')"
-        icon-btn hidden
-      >
-        <div i-carbon:language />
-      </button>
       <a
         href="https://github.com/GDProject/gd-website"
-        target="_blank" :title="t('link.github')"
+        target="_blank"
+        title="GitHub"
         icon-btn
       >
         <div i-carbon:logo-github />
       </a>
       <button
-        :title="t('header.toggle_dark')"
+        title="Toggle Dark Mode"
         icon-btn
         @click="toggleDark()"
       >

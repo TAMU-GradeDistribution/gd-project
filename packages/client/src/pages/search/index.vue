@@ -1,8 +1,6 @@
 <script setup lang="ts">
-const { t } = useI18n()
-
 useHead({
-  title: `${t('button.search')} | GDProject`,
+  title: 'Search | GDProject',
 })
 </script>
 

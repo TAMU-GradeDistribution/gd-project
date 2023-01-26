@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const router = useRouter()
-const { t } = useI18n()
 </script>
 
 <template>
@@ -12,12 +11,12 @@ const { t } = useI18n()
     <main>
       <RouterView />
       <a
-        :title="t('link.go_back')"
+        title="Go Back"
         flex my-20 w-fit mx-auto text-lg icon-btn
         @click="router.back()"
       >
         <div i-carbon:caret-left text-2xl />
-        {{ t('link.go_back') }}
+        Go Back
       </a>
     </main>
     <Footer />

@@ -1,9 +1,8 @@
 <script setup lang="ts">
-const { t } = useI18n()
 const router = useRouter()
 
 useHead({
-  title: `${t('error.not-found')} | GDProject`,
+  title: 'Not Found | GDProject',
   meta: [
     { name: 'robots', content: 'noindex, nofollow' },
   ],
@@ -18,15 +17,15 @@ useHead({
     >
       <div font-900 text-4xl>
         <span text-red>404:</span>
-        {{ t('error.not-found') }}
+        Not Found
       </div>
       <button
-        :title="t('link.go_back')"
+        title="Go Back"
         icon-btn flex text-lg mt-2
         @click="router.back()"
       >
         <div i-carbon:caret-left text-2xl />
-        {{ t('link.go_back') }}
+        Go Back
       </button>
     </div>
   </main>

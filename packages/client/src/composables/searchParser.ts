@@ -103,9 +103,7 @@ export const searchParser = (uni: string, query: string) => {
   )
 
   // print the search object for debugging
-  Object.entries(result)
-    .forEach(([k, v]) => console.log(`${k}: ${v}`))
+  // Object.entries(result)
+  //   .forEach(([k, v]) => console.log(`${k}: ${v}`))
   return result
 }
-
-'asdf asdf asdf'[0]
