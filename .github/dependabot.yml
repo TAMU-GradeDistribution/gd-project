@@ -6,10 +6,34 @@
 version: 2
 updates:
 
-  - package-ecosystem: npm
-    directory: /
+  - package-ecosystem: "npm"
+    directory: "/"
     schedule:
-      interval: weekly
+      interval: "weekly"
     commit-message:
-      prefix: 'chore(deps):'
-    labels: []
+      prefix: "chore(root):"
+    labels: [ ]
+
+  - package-ecosystem: "npm"
+    directory: "/packages/shared"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "chore(shared):"
+    labels: [ ]
+
+  - package-ecosystem: "npm"
+    directory: "/packages/server"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "chore(server):"
+    labels: [ ]
+
+  - package-ecosystem: "npm"
+    directory: "/packages/client"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "chore(client):"
+    labels: [ ]

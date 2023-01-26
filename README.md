@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <a href="https://gd.adibarra.com/">
-    <img src="./public/favicon.svg" alt="Logo" height="128">
+    <img src="./packages/client/public/favicon.svg" alt="Logo" height="128">
   </a>
   <br>
   The GDProject
@@ -35,7 +35,7 @@
 
 ## About
 
-The GDProject website is a web app that allows users to search for courses and view statistics about them. The goal of this project is to provide a better way to analyze grade distributions. Currently, for most universities, the only way to do this is to manually search through massive reports or spreadsheets.
+The GDProject is a web app that allows users to search for courses and view statistics about them. The goal of this project is to provide a better way to analyze grade distributions. Currently, for most universities, the only way to do this is to manually search through massive reports or spreadsheets.
 
 The project can be seen in action at [here](https://gd.adibarra.com/).
 
@@ -55,7 +55,7 @@ $ npm install -g pnpm
 ### Installation
 ```bash
 # clone the repo
-$ git clone https://github.com/GDProject/gd-website
+$ git clone https://github.com/GDProject/gd-project
 
 # install dependencies
 $ pnpm install

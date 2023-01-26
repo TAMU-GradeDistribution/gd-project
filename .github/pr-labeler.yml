@@ -1,18 +1,35 @@
 # Add 'type/ci-workflow-env' label for changes to tooling, config, or env files
 type/ci-workflow-env:
-  - '.github/**/*'
-  - '.vscode/**/*'
-  - .editorconfig
-  - .gitignore
-  - .gitattributes
-  - .nvmrc
-  - .npmrc
+- '.github/**/*'
+- '.vscode/**/*'
+- .editorconfig
+- .gitignore
+- .gitattributes
+- .nvmrc
+- .npmrc
+- pnpm-workspace.yaml
 
 # Add 'type/dependencies' label for changes to package.json or pnpm-lock.yaml files
 type/dependencies:
-  - '**/package.json'
-  - '**/pnpm-lock.yaml'
+- '**/package.json'
+- '**/pnpm-lock.yaml'
 
 # Add 'docs' label for changes to *.md files not in the .github folder
 type/docs:
-  - any: [LICENSE, '**/*.md', '!.github/**/*']
+- any: [LICENSE, '**/*.md', '!.github/**/*']
+
+# Add the 'package/meta' label for changes to the meta package
+package/meta:
+- any: ['!packages/client/**/*', '!packages/server/**/*', '!packages/shared/**/*']
+
+# Add the 'package/client' label for changes to the client package
+package/client:
+- 'packages/client/**/*'
+
+# Add the 'package/server' label for changes to the server package
+package/server:
+- 'packages/server/**/*'
+
+# Add the 'package/shared' label for changes to the shared package
+package/shared:
+- 'packages/shared/**/*'

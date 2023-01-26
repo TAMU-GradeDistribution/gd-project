@@ -77,3 +77,17 @@
 - name: priority/low
   color: 54ff00
   description: This should be dealt with when we have time.
+
+# package labels
+- name: "package/meta"
+  color: 2da8e5
+  description: "Related to the meta package."
+- name: "package/client"
+  color: 2da8e5
+  description: "Related to the client package."
+- name: "package/server"
+  color: 2da8e5
+  description: "Related to the server package."
+- name: "package/shared"
+  color: 2da8e5
+  description: "Related to the shared package."
