@@ -1,0 +1,6 @@
+dist/
+dist-ssr/
+node_modules/
+
+.vite-ssg-dist
+.vite-ssg-temp
