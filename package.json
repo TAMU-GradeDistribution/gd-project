@@ -10,7 +10,7 @@
     "build": "pnpm -r build",
     "commit": "git-cz",
     "dev": "pnpm -r --parallel dev",
-    "lint": "pnpm -r --parallel run lint",
+    "lint": "pnpm -r --parallel lint",
     "taze": "taze major -I -r"
   },
   "devDependencies": {
