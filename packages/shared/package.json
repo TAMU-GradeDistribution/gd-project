@@ -1,0 +1,26 @@
+{
+  "name": "shared",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@7.26.0",
+  "description": "A blazing fast web app for grade distribution analysis. (shared)",
+  "author": "adibarra <github@adibarra.com> (https://adibarra.com)",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "rm -rf dist/ && tsc",
+    "dev": "tsc -w --preserveWatchOutput",
+    "lint": "eslint --ext .ts src/"
+  },
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "@antfu/eslint-config-ts": "^0.34.1",
+    "@types/node": "^18.11.18",
+    "eslint": "^8.31.0",
+    "typescript": "^4.9.4"
+  }
+}
