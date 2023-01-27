@@ -1,0 +1,6 @@
+{
+  "extends": "@antfu/eslint-config-ts",
+  "rules": {
+    "no-console": ["error", { "allow": ["log", "warn", "error"] }]
+  }
+}
