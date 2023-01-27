@@ -1,13 +1,10 @@
 .idea/
 .yarn/
 .npm/
-**/dist/
-**/dist-ssr/
-**/node_modules/
+
+node_modules/
 
 .DS_Store
-.vite-ssg-dist
-.vite-ssg-temp
 *.local
 *.log
 *:Zone.Identifier
