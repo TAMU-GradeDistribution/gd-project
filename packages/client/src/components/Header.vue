@@ -23,7 +23,7 @@
         <div i-carbon:help />
       </RouterLink>
       <a
-        href="https://github.com/GDProject/gd-website"
+        href="https://github.com/GDProject/gd-project"
         target="_blank"
         title="GitHub"
         icon-btn
