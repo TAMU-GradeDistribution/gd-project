@@ -45,7 +45,7 @@
     "sass": "^1.57.1",
     "typescript": "^4.9.4",
     "unocss": "^0.49.0",
-    "unplugin-auto-import": "^0.12.2",
+    "unplugin-auto-import": "^0.13.0",
     "unplugin-vue-components": "^0.22.12",
     "unplugin-vue-macros": "^1.6.4",
     "vite": "^4.0.4",
