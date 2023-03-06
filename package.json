@@ -17,7 +17,7 @@
     "commitizen": "^4.3.0",
     "commitplease": "^3.2.0",
     "cz-conventional-changelog": "^3.3.0",
-    "taze": "^0.8.5"
+    "taze": "^0.9.0"
   },
   "commitplease": {
     "style": "angular"
