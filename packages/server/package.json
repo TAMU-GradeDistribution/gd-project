@@ -11,16 +11,23 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "rm -rf dist/ && tsc",
-    "dev": "tsc -w --preserveWatchOutput",
+    "dev": "tsc && concurrently \"tsc -w --preserveWatchOutput\" \"nodemon dist/index.js\"",
     "lint": "eslint ."
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "shared": "file:../shared"
   },
   "devDependencies": {
     "@antfu/eslint-config-ts": "^0.35.1",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.16",
     "@types/node": "^18.11.18",
+    "concurrently": "^7.6.0",
     "eslint": "^8.32.0",
+    "nodemon": "^2.0.20",
     "typescript": "^4.9.4"
   }
 }
