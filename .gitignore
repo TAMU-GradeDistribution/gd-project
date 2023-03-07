@@ -1,13 +1,14 @@
 .idea/
 .yarn/
 .npm/
-
 node_modules/
 
 .DS_Store
+*:Zone.Identifier
+
 *.local
 *.log
-*:Zone.Identifier
 .env*
 .*.env
 .pnp.*
+vite.config.ts.timestamp*
