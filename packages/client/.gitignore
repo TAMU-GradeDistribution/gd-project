@@ -4,3 +4,4 @@ node_modules/
 
 .vite-ssg-dist
 .vite-ssg-temp
+vite.config.ts.timestamp*
