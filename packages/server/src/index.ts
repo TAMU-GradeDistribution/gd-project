@@ -11,12 +11,12 @@ app.use(cors({
 }))
 
 // set up routes
-app.get('/v1/universities', (req, res) => {
+app.get(`${CONFIG.API_PATH}/universities`, (req, res) => {
   // some dummy data, replace with a database query
   res.json({
     data: [
-      { value: 'TAMU', label: 'Texas A&M University, College Station' },
-      { value: 'UT', label: 'University of Texas, Austin' },
+      { id: 'TAMU', name: 'Texas A&M University, College Station' },
+      { id: 'UT', name: 'University of Texas, Austin' },
     ],
   })
 })
