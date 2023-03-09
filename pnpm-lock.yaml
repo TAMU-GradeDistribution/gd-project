@@ -33,12 +33,12 @@ importers:
       dotenv: ^16.0.3
       eslint: ^8.35.0
       fuse.js: ^6.6.2
+      gd-shared: file:../shared
       markdown-it-link-attributes: ^4.0.1
       nprogress: ^0.2.0
       pinia: ^2.0.33
       postcss: ^8.4.21
       sass: ^1.58.3
-      shared: file:../shared
       typescript: ^4.9.5
       unocss: ^0.50.4
       unplugin-auto-import: ^0.15.1
@@ -66,9 +66,9 @@ importers:
       '@vueuse/integrations': 9.13.0_hzz2dxfa5xczya3cgo7rr32wcu
       dotenv: 16.0.3
       fuse.js: 6.6.2
+      gd-shared: file:packages/shared
       nprogress: 0.2.0
       pinia: 2.0.33_hmuptsblhheur2tugfgucj7gc4
-      shared: file:packages/shared
       vue: 3.2.47
       vue-demi: 0.13.11_vue@3.2.47
       vue-router: 4.1.6_vue@3.2.47
@@ -116,14 +116,14 @@ importers:
       dotenv: ^16.0.3
       eslint: ^8.35.0
       express: ^4.18.2
+      gd-shared: file:../shared
       nodemon: ^2.0.21
-      shared: file:../shared
       typescript: ^4.9.5
     dependencies:
       cors: 2.8.5
       dotenv: 16.0.3
       express: 4.18.2
-      shared: file:packages/shared
+      gd-shared: file:packages/shared
     devDependencies:
       '@antfu/eslint-config-ts': 0.36.0_ycpbpc6yetojsgtrx3mwntkhsu
       '@types/cors': 2.8.13
@@ -9528,6 +9528,6 @@ packages:
 
   file:packages/shared:
     resolution: {directory: packages/shared, type: directory}
-    name: shared
+    name: gd-shared
     version: 1.0.0
     dev: false

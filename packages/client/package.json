@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "gd-client",
   "type": "module",
   "version": "1.0.0",
   "private": true,
@@ -23,7 +23,7 @@
     "fuse.js": "^6.6.2",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.33",
-    "shared": "file:../shared",
+    "gd-shared": "file:../shared",
     "vue": "^3.2.47",
     "vue-demi": "^0.13.11",
     "vue-router": "^4.1.6",
